@@ -1,14 +1,25 @@
 package OOPs.inheritance;
 
-public class Boxweight extends box{
+class Boxweight extends box {
     double weight;
 
-    public Boxweight(){
-        this.weight=-1;
-
+    Boxweight() {
+        super();
+        this.weight = -1;
     }
-    public Boxweight(double l,double h, double w,double weight){
-        super(l,h,w);
-        this.weight=weight;
+
+    Boxweight(Boxweight other) {
+        super(other);     // calls Box copy constructor
+        this.weight = other.weight;
+    }
+
+    Boxweight(double l, double h, double w, double weight) {
+        super(l, h, w);
+        this.weight = weight;
+    }
+
+    Boxweight(double side, double weight){
+        super(side);
+        this.weight = weight;
     }
 }
